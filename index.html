@@ -5,94 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <style>
-      .highlight {
-        background-color: red;
-      }
-      .green {
-        background-color: green;
+      .paragrafRenklendir {
+        color: red;
+        font-size: 25px;
       }
     </style>
     <title>Document</title>
   </head>
   <body>
-    <h1>Lorem ipsum dolor sit amet.</h1>
-    <h3>Lorem, ipsum dolor.</h3>
-    <ul id="list">
-      <li>Lorem, ipsum.</li>
-      <li>Lorem,<a href=""> ipsum.</a></li>
-      <li>Lorem, ipsum.</li>
-    </ul>
-    <ul id="list2">
-      <li>YENİ Lorem, ipsum.</li>
-      <li>Lorem,<a href=""> test.</a></li>
-      <li>Lorem, ipsum.</li>
-    </ul>
-
-    <input
-      id="normal"
-      type="text"
-      placeholder="FullName"
-      value="Jquery Val Fonksiyonu"
-    />
-
-    <input id="name" placeholder="Your Name" type="text" />
-    <input
-      id="lastname"
-      class="green"
-      placeholder="Your Last Name"
-      type="text"
-    />
-    <button id="form-btn" onclick="handleSubmit()">submit</button>
-
-    <img id="image" src="picture.jpg" width="100px" />
+    <form action="">
+      <p>Ad: <input class="control" type="text" /></p>
+      <p>
+        Hobiler:
+        <select class="control">
+          <option value="spor" selected="selected">Spor Yapmak</option>
+          <option value="sinema">Sinemaya gitmek</option>
+        </select>
+      </p>
+    </form>
     <script>
-      /* 4-) Attr 
-      $("#image").attr("width", "400px");
-        */
-
-      /* 3-) Jquery Text Val
-
-      console.log($("h1").text());
-      console.log($("ul li").text());
-      $("h1").text("JavaScript Jquerryyyy");
-      console.log($("input").val());
-      $("#normal").val("Bu değişti dayı");
-
-      const handleSubmit = () => {
-        const name = $("#name").val();
-        const lastname = $("#lastname").val();
-        console.log("Name:", name, "Last Name:", lastname);
-
-        $("#name").toggleClass("highlight");
-        $("#lastname").removeClass("green");
-      };
-      */
-
-      /* 1-) JQuery Selectors
-      console.log($("#list"));
-      console.log($("h3"));
-      console.log($("ul"));
-      console.log($("li"));
-      console.log($("ul li a"));
-      console.log($("#list2 li a"));
-      */
-
-      /* 2-) CSS with JQuery
-      const styles = {
-        color: "yellow",
-        fontSize: "20px",
-        border: "1px solid blue",
-        listStyleType: "none",
-      };
-
-      $("h3").css("color", "red");
-      $("#list a").css("text-decoration", "none");
-      $("li").css(styles);
-      $("a").css({
-        color: "red",
-        border: "3px solid red",
+      $(function () {
+        $(".control").change(function () {
+          console.log($(this).val());
+        });
       });
-      */
     </script>
   </body>
 </html>
